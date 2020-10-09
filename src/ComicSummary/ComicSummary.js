@@ -1,47 +1,29 @@
-import React from 'react'
-import md5 from 'md5'
-// import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import React, { useEffect } from 'react'
+import './ComicSummary.scss'
 
-function ComicSummary() {
-    const [comicSummary, setComicSummary] = useState([]);
+function ComicSummary(props) {
 
-const getComicSummary = (comicSum) => {
-    let ts = Date.now()
-    let hash = md5(ts + process.env.REACT_APP_PRIVATE + process.env.REACT_APP_PUBLIC)
-    let characterId = 1009610
-        fetch(`http://gateway.marvel.com/v1/public/characters/${characterId}/comics?ts=${ts}&apikey=${process.env.REACT_APP_PUBLIC}&hash=${hash}&limit=50`)
-        .then(data => data.json())
-        .then(data => 
-            {console.log(data.data)
-            setComicSummary(data.data.description)
-            })
-        
-    };
+    let comic = props.listOfComics.filter((comic, index) => {
+        return comic.id == props.match.params.comic 
+    })
+    
 
-    useEffect(() => {
-        getComicSummary();
-    }, []);
+// useEffect(() => { 
+// }, [])
 
-    // const comicSummary 
+console.log(comic)
 
-    let comicSum = ''
-    if (comicSummary) {
-        comicSum = comicSummary.map(comic => {
-            return(
-                <div>
-                    <h1>{comic.description}</h1>
-                </div>
-            )
-        })
-    }
+// this is where i pull the data needed for the /ComicSummary/ path 
+// that being said it should contain the image, description, creators and pricing (if available)
+// for the chosen comic
 
     return (
-        <div className='comics'>
-            {comicSum} 
+        <div>
+            <h1>
+            {/* {comic.title} */}
+            </h1>
         </div>
     )
-    
 }
 
 export default ComicSummary

@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
+import './Nav.scss'
 function Nav() {
 return(    
-    <nav className='navi'>
-            <Link to='/'>
-            Welcome Home!
-            </Link>
-            {/* <h3>The-Spectacular-Spidey-Encycopedia</h3> */}
-            <Link to='/ComicBooks'>Spidey Comics!</Link>
-        </nav>
+    <nav>
+        <Link to='/'>
+        Welcome Home!
+        </Link>
+        <br></br>
+        <Link to='/comicbooks'>Spidey Comics!</Link>
+    </nav>
 )
     }
 
 
 export default Nav
+
+// Nav is being taken to the app where it will be rendered in the website in general

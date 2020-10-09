@@ -1,44 +1,28 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import md5 from 'md5'
 import { Link } from "react-router-dom";
-function HeroComic() {
-    const [listOfComics, setListOfComics] = useState([]);
+import './ComicBooks.scss'
 
-    const getAllComics = (comics) => {
-// get all heroes
-    //from id's get comics (ANOTHER API CALL)
-        //make another call to get images description and etc.
-    let ts = Date.now()
-    let hash = md5(ts + process.env.REACT_APP_PRIVATE + process.env.REACT_APP_PUBLIC)
-    let characterId = 1009610
-        fetch(`http://gateway.marvel.com/v1/public/characters/${characterId}/comics?ts=${ts}&apikey=${process.env.REACT_APP_PUBLIC}&hash=${hash}&limit=50`)
-        .then(data => data.json())
-        .then(data => 
-            {console.log(data.data)
-            setListOfComics(data.data.results)
-            })
-        
-    };
+function ComicBooks({listOfComics}) {
 
 
-    useEffect(() => {
-        getAllComics();
-    }, []);
+    
 
     let comics = ''
     if (listOfComics[0]) {
-        comics = listOfComics.map(comic => {
+        comics = listOfComics.map((comic, index) => {
             return(
-                <div>
+                <div key={index}>
                                 {/* thumbnail is possibly the cover of the comic book */}
-                    <Link to={'/ComicSummary/' + comic.title}> {comic.title} </Link>{" "}
-                    {/* <h3>{comic.title}</h3> */}
+                    <Link to={`/comicsummary/${comic.id}`}> <h3>{comic.title}</h3> </Link>
+                    
                 </div>
             )
         })
     }
-
+// HeroComic routes to the '/ComicBooks' path where the array of comic data (the data is show to be 
+// called/used in getAllComics function) will be appearing 
+// being the title of the comic and the cover image; the cover image when clicked will route to the 
+// /ComicSummary/ path where only the summary of the specific comic clicked on will appear
 
 return (
     <div className='comics'>
@@ -48,4 +32,4 @@ return (
 
 }
 
-export default HeroComic;
+export default ComicBooks;
