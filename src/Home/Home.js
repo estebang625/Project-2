@@ -11,7 +11,8 @@ function Home() {
         <h2>Stan Lee:</h2>
 
         <p>In 1962, with the success of the Fantastic Four, Marvel Comics editor and head writer Stan Lee was casting for a new superhero idea. He said the idea for Spider-Man arose from a surge in teenage demand for comic books, and the desire to create a character with whom teens could identify. In his autobiography, Lee cites the non-superhuman pulp magazine crime fighter the Spider as a great influence, and in a multitude of print and video interviews, Lee stated he was further inspired by seeing a spider climb up a wall adding in his autobiography that he has told that story so often he has become unsure of whether or not this is true.</p>
-
+        <br></br>
+        <br></br>
         <img src='https://upload.wikimedia.org/wikipedia/commons/3/39/Steve_Ditko_HS_Yearbook.jpeg' />
 
         <h2>Steve Ditko:</h2>
@@ -19,6 +20,8 @@ function Home() {
         <p>
         Ditko helped with the inspiration of the costume and powers of Spider-Man. Ditko recalled that, "One of the first things I did was to work up a costume. A vital, visual part of the character. I had to know how he looked ... before I did any breakdowns. For example: A clinging power so he wouldn't have hard shoes or boots, a hidden wrist-shooter versus a web gun and holster, etc. ... I wasn't sure Stan would like the idea of covering the character's face but I did it because it hid an obviously boyish face. It would also add mystery to the character...."
       </p>
+      <br></br>
+      <br></br>
       </div>
     );
 }
