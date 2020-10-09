@@ -13,15 +13,24 @@ function ComicSummary(props) {
 
 console.log(comic)
 
-// this is where i pull the data needed for the /ComicSummary/ path 
-// that being said it should contain the image, description, creators and pricing (if available)
-// for the chosen comic
+if (comic[0]) {
+    return(
+    <>
+        <img src={comic[0].thumbnail} />
+        <h1>{comic[0].title}</h1>
+        <h3>{comic[0].description}</h3>
+        <h2>$ {comic[0].prices[0].price}</h2>
+        <h3>Creators:</h3>
+        <p>{comic[0].creators.items[0].name}</p>
+        <p>{comic[0].creators.items[1].name}</p>
+        <p>{comic[0].creators.items[2].name}</p>
+    </>
+    )
+}
 
     return (
         <div>
-            <h1>
-            {/* {comic.title} */}
-            </h1>
+            {comic}
         </div>
     )
 }

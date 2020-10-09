@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import './Nav.scss'
 
 function Nav() {
-return(    
+return(  
     <nav>
-        <Link className='L' to='/'>
+        
+        <Link to='/'>
         Welcome Home!
         </Link>
-        <br></br>
-        <Link to='/comicbooks'>Spidey Comics!</Link>
+        
+        <Link to='/comicbooks'>
+        Spidey Comics!
+        </Link>
     </nav>
 )
     }

@@ -46,8 +46,26 @@ function App() {
       <header>
       <h2>Spider-Man Comic Book Encyclopedia</h2>
       </header>
-
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h3>
       <Nav />
+      </h3>
+      
       
       <main>
         <Switch>
