@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import './Nav.scss'
+
 function Nav() {
 return(    
     <nav>
-        <Link to='/'>
+        <Link className='L' to='/'>
         Welcome Home!
         </Link>
         <br></br>
